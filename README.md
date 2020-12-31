@@ -10,24 +10,27 @@ This is a scaffolding for developing Laravel applications with Docker
 
 ## Local Development Setup
 1. Install [Docker Desktop](https://docs.docker.com/desktop/)
-2. Create `.env` file from `.env.example`.
-3. Run application services in Docker
+2. Clone this repository to your new empty project directory.
+3. Create `.env` file from `.env.example`.
+4. Modify `docker-compose.yml`'s `database` and `myapp` service names, as needed. Make sure they are unique, in case you are running multiple projects in Docker.
+5. Run application services in Docker
 ```
 $ docker-compose up -d
 ```
-4. Enable User Authentication pages with VueJS
+6. Enable User Authentication pages with VueJS
 ```
 docker-compose exec myapp php artisan ui vue --auth
 ```
-5. Install node dependencies
+**NOTE** `myapp` service name depends on the changes made on Step #4
+7. Install node dependencies
 ```
 $ docker-compose exec myapp npm install
 ```
-6. Compile Frontend JS and CSS. Keep this command running in a window so that JS will auto-compile with changes in vue files.
+8. Compile Frontend JS and CSS. Keep this command running in a window so that JS will auto-compile with changes in vue files.
 ```
 $ docker-compose exec myapp npm run watch
 ```
-7. App should be running at `http://localhost:3000`
+9. App should be running at `http://localhost:3000`
 
 ## Running commands 
 To run commands inside the container:
