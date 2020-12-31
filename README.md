@@ -22,6 +22,7 @@ $ docker-compose up -d
 docker-compose exec myapp php artisan ui vue --auth
 ```
 **NOTE** `myapp` service name depends on the changes made on Step 4.
+
 7. Install node dependencies
 ```
 $ docker-compose exec myapp npm install
