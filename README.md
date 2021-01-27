@@ -5,7 +5,7 @@ This is a scaffolding for developing Laravel applications with Docker
 ## Components:
 - [Laravel 7](https://laravel.com/docs)
 - [bitnami/bitnami-docker-laravel](https://github.com/bitnami/bitnami-docker-laravel)
-- Pre-loaded [laravel-ui ^2.1](https://github.com/laravel/ui) with VueJS and authentication scaffolds enabled
+- (optional) [laravel-ui ^2.1](https://github.com/laravel/ui) with VueJS and authentication scaffolds
 ## Local Development Setup
 1. Install [Docker Desktop](https://docs.docker.com/desktop/)
 2. Clone this repository to your new empty project directory.
@@ -15,7 +15,7 @@ This is a scaffolding for developing Laravel applications with Docker
 ```
 $ docker-compose up -d
 ```
-6. Enable User Authentication pages with VueJS
+6. Enable User Authentication pages with VueJS (optional)
 ```
 docker-compose exec myapp php artisan ui vue --auth
 ```
