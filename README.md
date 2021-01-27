@@ -42,7 +42,8 @@ Where `<app service-name>` is the service name of the app defined in `docker-com
 
 **IMPORTANT:** When running multiple projects, make sure their app service names are unique, including the service name for the database.
 
-## Common Commands
+
+## Helpful Commands
 - Installing a dependency by Composer
 ```
 $ docker-compose exec myapp composer require <package-name>
@@ -51,9 +52,9 @@ $ docker-compose exec myapp composer require <package-name>
 ```
 docker-compose exec myapp php artisan config:clear
 ```
-- Packages re-discovery
+- After installing a new depenency, run the following command for package re-discovery
 ```
-$ docker-compose exec myapp php artisan dump-autoload
+$ docker-compose exec myapp composer dump-autoload
 ```
 - Restart the app service.
 ```
@@ -64,6 +65,14 @@ $ docker-compose restart myapp
 $ docker-compose stop
 ```
 
+
+## Updating Docker Images
+- From time to time, docker image used as base for Laravel will be updated. 
+- To update the docker image, run the following
+```
+$ docker pull .io/bitnami/laravel:7-debian-10
+$ docker-compose restart myapp
+```
 
 ## Future Enhancements
 - Use [Laravel Jetstream](https://github.com/laravel/jetstream)
