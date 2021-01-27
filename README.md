@@ -5,9 +5,7 @@ This is a scaffolding for developing Laravel applications with Docker
 ## Components:
 - [Laravel 7](https://laravel.com/docs)
 - [bitnami/bitnami-docker-laravel](https://github.com/bitnami/bitnami-docker-laravel)
-- Pre-loaded [laravel-ui ^2.1](https://github.com/laravel/ui) with VueJS for User Login/Register pages
-
-
+- Pre-loaded [laravel-ui ^2.1](https://github.com/laravel/ui) with VueJS and authentication scaffolds enabled
 ## Local Development Setup
 1. Install [Docker Desktop](https://docs.docker.com/desktop/)
 2. Clone this repository to your new empty project directory.
@@ -40,8 +38,7 @@ $ docker-compose exec <app service-name> <command>
 ```
 Where `<app service-name>` is the service name of the app defined in `docker-compose.yml`. In this project `myapp` is the app service name.
 
-**IMPORTANT:** When running multiple projects, make sure their app service names are unique, including the service name for the database.
-
+**IMPORTANT:** When running multiple Laravel projects in Docker, make sure their service names and ports are unique.
 
 ## Helpful Commands
 - Installing a dependency by Composer
@@ -70,7 +67,7 @@ $ docker-compose stop
 - From time to time, docker image used as base for Laravel will be updated. 
 - To update the docker image, run the following
 ```
-$ docker pull .io/bitnami/laravel:7-debian-10
+$ docker pull docker.io/bitnami/laravel:7-debian-10
 $ docker-compose restart myapp
 ```
 
